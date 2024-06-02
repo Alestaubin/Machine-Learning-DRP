@@ -1,4 +1,4 @@
-\begin{thebibliography}{26}
+\begin{thebibliography}{27}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -125,6 +125,12 @@ Nitish Srivastava, Geoffrey Hinton, Alex Krizhevsky, Ilya Sutskever, and Ruslan 
 \newblock Dropout: A simple way to prevent neural networks from overfitting.
 \newblock \emph{Journal of Machine Learning Research}, 15\penalty0 (56):\penalty0 1929--1958, 2014.
 \newblock URL \url{http://jmlr.org/papers/v15/srivastava14a.html}.
+
+\bibitem[Sutton and Barto(2018)]{Sutton1998}
+Richard~S. Sutton and Andrew~G. Barto.
+\newblock \emph{Reinforcement Learning: An Introduction}.
+\newblock The MIT Press, second edition, 2018.
+\newblock URL \url{http://incompleteideas.net/book/the-book-2nd.html}.
 
 \bibitem[Vasani(2019)]{Vasani_2019}
 Dipam Vasani.

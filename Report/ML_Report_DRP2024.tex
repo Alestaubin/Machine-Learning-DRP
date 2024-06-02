@@ -98,7 +98,7 @@
 %%       End Alex's Commands and packages        %%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+%\pagestyle{headings}
 \title{An Introduction to Supervised Machine Learning}
 
 % The \author macro works with any number of authors. There are two
@@ -125,13 +125,12 @@
 \begin{abstract} 
 
 \noindent
-  We discuss neural networks (NN), the classical approach to supervised learning. We first cover the components of a NN, such as its neurons, weights, edges, and activation functions. We explain how a NN can learn information and infer about new, unseen data. We then discuss the problem of overfitting a model, as well as techniques to avoid it.
-  \footnote{Work in progress.}
+  This paper serves as an introductory guide to supervised learning within the field of machine learning (ML), aimed at readers with a foundational understanding of mathematics, primarily calculus and statistics. The focus is on neural networks (NN), with an in-depth exploration of its key components and learning methods. We begin with an overview of NNs, detailing the architecture and function of single-layer perceptrons, neurons, and feed-forward neural networks. The discussion extends to the structural elements of layers and the pivotal role of activation functions. We then explore the learning mechanisms of NNs through backpropagation and gradient descent optimization techniques. Different loss functions, critical for evaluating model performance, are also explored. Finally, we address the challenges of overfitting and underfitting and present strategies to achieve an optimal fit. 
 
 \vspace{5mm}
 
 
-\textbf{Keywords:} Machine Learning, Supervised Learning, Neural Networks, Backpropagation, Overfitting.
+\textbf{Keywords:} Machine Learning, Supervised Learning, Neural Networks, Multiple Layer Perceptron, Activation Function, Backpropagation, Loss function, Gradient Descent, Overfitting, Underfitting.
 
 
 \textbf{}
@@ -172,8 +171,7 @@ There are several types of ML algorithms. The main categories are divided into \
 \vspace{4mm}
 \noindent\textsc{Reinforcement learning} involves a structured approach where algorithms are provided with actions, parameters, and goals. These algorithms explore various options, learn from trial and error, and adapt their strategies based on past experiences to optimize outcomes \citep{GuideML}.
 
-\vspace{4mm}
-In this paper, we will focus on \textit{Supervised learning}, in particular, the \textit{Neural Network} approach. However, most of the basic concepts we'll cover, such as Neurons, Backpropagation, and Overfitting, are topics that apply to all spheres of machine learning.
+In this paper, we aim to provide a concise, yet comprehensive introduction to \textit{Supervised learning}, focussing on the \textit{Neural Network} approach. We intend for this report to serve as a reference to key concepts, offering quick access to definitions and reliable references as needed. Most of the basic concepts we discuss, such as Neurons, Backpropagation, and Overfitting, are relevant across all areas of machine learning.
 
 We note that throughout, some terms will be introduced before they are defined, or may only be clarified by illustrative examples. We chose this approach to communicate ideas because of the broad nature of machine learning. Precise definitions can be made in some cases for terms, while other significant terms are more flexibly used like in common language. The figures and examples used were taken from trusted sources in the field and citations are included. 
 
@@ -803,19 +801,22 @@ When training large models with great complexity, it's common to observe a pheno
   Dropout is yet another technique to address the regularization problem. The core concept is to randomly deactivate units, along with their connections, within the neural network during training. This prevents units from becoming overly reliant on each other. Throughout training, dropout samples from an array of "thinned" networks. At the testing phase, approximating the ensemble effect of these thinned networks can be achieved by utilizing a single unthinned network with reduced weights. This approach significantly mitigates overfitting and surpasses other regularization techniques. Dropout has demonstrated its efficacy in enhancing the performance of neural networks across various supervised learning tasks, including vision, speech recognition, document classification, and computational biology. Notably, it has achieved state-of-the-art results on numerous benchmark data sets \citep{JMLR:v15:srivastava14a}.
     \section{Conclusion}%
     \label{sec:Conclusion}
-As we've journeyed through the amazing realm of supervised machine learning, we've seen how powerful it can be. Through simple mathematics and precise engineering of neural networks, supervised learning algorithms can extract information from labelled data to make inferences about unseen data, behaving like an intelligent being. This is where machine learning diverges from statistics, which focuses solely on understanding the dataset without making inferences. We covered the foundational concepts of neural networks and their construction, progressing to the more advanced techniques of backpropagation and gradient descent. We provided brief surveys of activation and loss functions for the reader's reference. We also addressed key challenges in machine learning, such as overfitting and underfitting, along with techniques to mitigate them.
+As we've journeyed through the amazing realm of supervised machine learning, we've seen how powerful it can be. Through simple mathematics and precise engineering of neural networks, supervised learning algorithms can extract information from labelled data to make inferences about unseen data, behaving like an intelligent being. This is where machine learning diverges from statistics, which is often focused on making inference from observed data, while ML is purposefully structured for making inference on unseen data. Throughout, we covered the foundational concepts of neural networks and their construction, progressing to the more advanced techniques of backpropagation and gradient descent. We provided brief surveys of activation and loss functions for the reader's reference. We also addressed key challenges in machine learning, such as overfitting and underfitting, along with techniques to mitigate them.
 
-The concept of supervised learning represents a change in how we see intelligence and knowledge. It was once believed that intelligence was a quality exclusive to humans, one that was demonstrated by one's capacity for understanding, reasoning, and experience-based learning. Supervised learning challenges this notion by demonstrating that machines can also exhibit these capabilities. It draws attention to a novel paradigm in which knowledge can arise from the interaction of algorithms and data. 
 
 Supervised learning has a significant impact on today's world. It drives many different applications, including as natural language processing, autonomous cars, and medical diagnostics. The ability to learn from labelled data has enabled the creation of systems that can recognize speech, translate languages, detect fraud, and recommend products with remarkable accuracy.
 
 It becomes evident, however, that the reliance of supervised learning on carefully labelled datasets poses a significant limitation. The need for abundant, high-quality data, paired with corresponding inputs and desired outputs, can be restrictive and often impractical in real-world scenarios. This limitation becomes particularly apparent when faced with complex tasks where defining the desired outputs may be challenging or even impossible. 
 
-This is the basis of the power of reinforcement learning (RL), an approach that learns from interacting directly with the environment, surpassing the limitations of supervised learning. In RL, agents move through a set of options, learning the best methods by making mistakes and getting feedback in the form of rewards. Due to its self-learning mechanism, RL can now address issues for which explicit supervision is impractical, providing access to previously uncharted territory for conventional machine learning techniques.
+This is the basis of the power of reinforcement learning (RL), an approach that learns from interacting directly with the environment, surpassing the limitations of supervised learning. In RL, agents move through a set of options, learning the best methods by making mistakes and getting feedback in the form of rewards. Due to its self-learning mechanism, RL can now address issues for which explicit supervision is impractical, providing access to previously uncharted territory for conventional machine learning techniques. The field of RL could be of great interest to the reader, and we recommend the textbook by \cite{Sutton1998} for further readings. 
+
+In this paper, we focused on the scientific view of ML, but a great deal can also be said about its philosophical impacts. The concept of supervised learning represents a change in how we see intelligence and knowledge. Some once believed that intelligence was a quality exclusive to humans, one that was demonstrated by one's capacity for understanding, reasoning, and experience-based learning. Supervised learning could be said to challenge this notion by demonstrating that machines can also exhibit these capabilities. This highlights a new paradigm where knowledge emerges from the interaction between algorithms and data. However, it could also be argued that social networks, economies, and evolutionary systems, all behave in a manner which could be deemed intelligent. This raises the question of who defines \textit{intelligence}. Many systems, like AI, are equilibria of optimization problems, and some argue that everything, even life itself, can be viewed as an optimization problem. Given the complexity of life, we claim that it is actually an \textit{NP-hard} optimization problem and leave the proof to the reader. 
+
 
 \section*{Acknowledgments}
+I want to express my gratitude to the \textit{reader} who made it this far, possibly being the only one to do so. I also thank the \href{https://www.math.mcgill.ca/gsams/drp/}{McGill Directed Reading Program} for the opportunity, support, and resources. Most importantly, I thank Yanees Dobberstein for his criticism and many insights.
 
-{\footnotesize
+ {\footnotesize
   \bibliography{ML_Report_DRP2024}
 }
 %\bibliographystyle{apa} 
